@@ -41,4 +41,4 @@ Note: _This is just an example!_
 
 If a plugin implements this interface, it will be possible to build tools that can ensure GDPR compliance across sites.
 
-This is still very early in the idea phase. You can follow our progress at https://www.gdprwp.com/.
+_**This is still very early in the idea phase. You can follow our progress at https://www.gdprwp.com/.**_
