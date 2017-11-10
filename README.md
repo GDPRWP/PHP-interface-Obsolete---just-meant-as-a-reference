@@ -10,6 +10,7 @@ A very simple example of an interface could be this (simplified):
 interface Privacy
 {
     /**
+     * Data Portability
      * Returns an array of userdata given an email address.
      *
      * @var string $email
@@ -18,6 +19,7 @@ interface Privacy
     public function exportUser($email);
 
     /**
+     * The Right to be Forgotten
      * Completely deletes and/or anonymises a user, including
      * all personal and sensitive information given an email
      * address.
