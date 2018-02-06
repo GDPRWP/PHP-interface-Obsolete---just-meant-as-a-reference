@@ -1,46 +1,28 @@
 # A privacy standard for WordPress plugins
 
-In this repository you will be able to follow the [GDPR WP](https://www.gdprwp.com/) project and collaborate on the development.
+In this repository you will find the PHP object interface ready for implementation in your WordPress plugin. 
 
-Our current proposed standard revolves around a PHP [object interface](http://php.net/manual/en/language.oop5.interfaces.php) that plugins can implement in their codebase. By implementing this standardized interface, you can tell the world how your plugin works with personal and sensitive data. Implementing the interface will also allow others to build tools that can help make your plugin GDPR compliant. With a standardized implementation, tools can be built that works across all WordPress plugins. That's our goal at least.
+The [GDPR WP](https://www.gdprwp.com/) project is open source and you are welcome to create issues on GitHub as well as collaborate with us via wordpress.SLACK.com - a #privacy channel is under way.
 
-A very simple example of an interface could be this (simplified):
+The proposed standard revolves around a PHP [object interface](http://php.net/manual/en/language.oop5.interfaces.php) that plugins can implement in their codebase. By implementing this standardized interface, you can tell the world how your plugin handles personal idenfiable information (PII). 
 
-```php
-interface Privacy
-{
-    /**
-     * Data Portability
-     * Returns an array of userdata given an email address.
-     *
-     * @var string $email
-     * @return array $userdata
-     */
-    public function exportUser($email);
+**How it works**
+We have a hook/do_action, in which we send an object. 
+This object is available for plugin developers to use, when identifying which Personal Identifiable Data their plugin handles.
 
-    /**
-     * The Right to be Forgotten
-     * Completely deletes and/or anonymises a user, including
-     * all personal and sensitive information given an email
-     * address.
-     *
-     * @var string $email
-     * @return boolean $result
-     */
-    public function forgetUser($email);
+The current Object, has a method called : set_field ($args), which in essens is key-value pairs. ('label' and 'value').
 
-    /**
-     * Returns a string containing the privacy policy for the
-     * plugin.
-     *
-     * @return string
-     */
-    public function policy();
-}
-```
+The GDPR for WP plugin will in turn present these values on an admin screen
 
-Note: _This is just an example!_
+**Our goal**
+Implementing the interface will allow privacy tools to be created that can help make WordPress websites GDPR compliant.
 
-If a plugin implements this interface, it will be possible to build tools that can ensure GDPR compliance across sites.
+Tools that work across WordPress plugins. That's our goal !
 
-_**This is still very early in the idea phase. You can follow our progress at https://www.gdprwp.com/.**_
+Version 1.0 of the Interface is out, and we're following [our roadmap](https://github.com/GDPRWP/standard/wiki/Roadmap)
+
+Demo code will provided shortly and a GDPR for WP plugin is being developed, to combine the interface output from a WordPress websites
+active plugins. This will ultimatly provide the needed functionality to website administrators to oversee the GDPR compliance status of a website, as well as handel user requests (data portability and right to be forgotten).
+
+
+_**Signup to our newsletter on https://www.gdprwp.com/ to stay in the loop.**_
