@@ -37,7 +37,7 @@ interface GdprInterface
 
 	/**
 	 * Anonymize is also a way to forget a user, but still keep the userdata for statistics ect.
-	 * It can be done, by hashing sentitive data.
+	 * It can be done, by hashing sensitive data.
 	 *
 	 * @var string $email
 	 * @return array $anonymize_data
