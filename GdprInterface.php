@@ -18,7 +18,7 @@ interface GdprInterface
 
 	/**
 	 * Data Portability
-	 * Returns an array of userdata given an user id
+	 * Returns an array of userdata given a user's email
 	 *
 	 * @var string $email
 	 * @return array $userdata
@@ -28,7 +28,7 @@ interface GdprInterface
 	/**
 	 * The Right to be Forgotten
 	 * Completely deletes and/or anonymises a user, including
-	 * all personal and sensitive information given an user id
+	 * all personal and sensitive information given a user's email
 	 *
 	 * @var string $email
 	 * @return array $deleted_data
@@ -37,7 +37,7 @@ interface GdprInterface
 
 	/**
 	 * Anonymize is also a way to forget a user, but still keep the userdata for statistics ect.
-	 * It ca be done, by hashing sentitive data.
+	 * It can be done, by hashing sentitive data.
 	 *
 	 * @var string $email
 	 * @return array $anonymize_data
